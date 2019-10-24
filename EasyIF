@@ -1,0 +1,42 @@
+//to działa//
+#include <iostream>
+
+using namespace std;
+int n;
+string evenodd(int num){
+        return (num%2)?"odd":"even";
+        }
+
+int main()
+
+{
+
+cout<<"podaj liczbę: ";
+cin>>n;
+cout<<evenodd(n);
+}
+// to nie działa JESZCZE
+
+#include <iostream>
+
+using namespace std;
+
+int podzielniki(int num)
+    {
+    for (int i=2;i<num;i++)
+        {return (num%i)?NULL:i;}
+    }
+int a;
+char t;
+int main() {
+do  {
+    cout<<"liczba: ";
+    cin>> a;
+    cout<<podzielniki(a);
+    cout<<endl;
+    cout<<"Koniec? t/n"<<endl;
+    cin>>t;
+    }
+    while(t!='t');
+}
+
