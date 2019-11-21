@@ -1,0 +1,77 @@
+3.2
+#include <iostream>
+#include <math.h>
+#include <cmath>
+
+using namespace std;
+
+float objetosc(float r)
+{
+    float v;
+    v = 4.0/3 * M_PI * r*r*r;
+    return v;
+}
+void pole (float r, float &wynik)
+{
+
+    wynik =  4.0 * M_PI * r*r;
+}
+float obwod(float r, float *wynik)
+{
+   *wynik = 2.0 * M_PI * r;
+}
+
+int main()
+{
+float promien, obj, pol, obw;
+cout << "Podaj promien kuli: ";
+cin >> promien;
+obj =  objetosc(promien);
+cout << "objetosc kuli wynosi: "<< obj << endl ;
+pole(promien,pol);
+cout << "pole powierzchni kuli wynosi: " << pol << endl;
+obwod(promien,&obw);
+cout << "obwod na rowniku kuli wynosi: " << obw << endl;
+w
+}
+
+
+#include <iostream>
+#include <math.h>
+#include <cmath>
+
+using namespace std;
+
+void przelicz(int* wskG, int* wskM, bool MtoG)
+{
+    if (MtoG)
+    {
+        *wskG=*wskM-*wskM/33+621;
+    }
+    else
+    {
+        *wskM=*wskG-621+(*wskG-621)/32;
+    }
+}
+
+int main()
+{
+bool nagreg;
+int M, G ;
+cout << "Czy przeliczyc z muzulmanskiego na gregorianski? [true/false]  ";
+cin >> nagreg;
+if (nagreg)
+{
+    cout << "podaj rok muzlumanski: ";
+    cin >> M;
+}
+else
+{
+    cout << "podaj rok gregorianski: ";
+    cin >> G;
+}
+
+przelicz(&G,&M,nagreg);
+cout << M  << " " << G;
+
+}
