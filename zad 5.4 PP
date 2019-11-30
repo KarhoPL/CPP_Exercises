@@ -1,0 +1,43 @@
+#include <iostream>
+using namespace std;
+
+
+int main()
+{
+int a[10];
+int* b[10];
+
+//przypisywanie wartosci do listy a
+for(int i = 0; i<10;i++)
+	a[i] = rand()%40 - 20;
+// przypisywanie wartosci do listy b
+for(int i = 0; i<10;i++)
+	{b[i] = &(a[i]);}
+
+//wyswietlanie list oryginalnych
+
+cout << "przed petla" << endl;
+cout << " a= ";
+for(int i = 0; i<10;i++)
+	cout << "["<< a[i] << "]";
+
+cout << endl << " b= ";
+for(int i = 0; i<10;i++)
+	cout << "["<< *b[i] << "]";
+// petla sortujaca
+for(int i=0;i<=10;i++)
+{
+   for(int j=1; j<=9; j++)
+  	if (*b[j-1]>*b[j]) swap(b[j-1], b[j]);
+}
+//wyswietlanie list po dzialaniu petli
+cout <<endl<< "po petli "<< endl;
+cout<< " a= ";
+for(int i = 0; i<10;i++)
+	cout << "["<< a[i] << "]";
+
+cout << endl << " b= ";
+for(int i = 0; i<10;i++)
+	cout << "["<< *b[i] << "]";
+
+}
